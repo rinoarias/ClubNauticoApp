@@ -42,7 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALConexion.cs" />
+    <Compile Include="DALPais.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataServiceLayer\DataServiceLayer.csproj">
+      <Project>{33ABABF1-1098-4983-9291-B2179290AD5D}</Project>
+      <Name>DataServiceLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
