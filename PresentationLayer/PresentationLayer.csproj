@@ -75,6 +75,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\rptCiudad.rdlc" />
+    <EmbeddedResource Include="Reports\rptPais.rdlc" />
+    <EmbeddedResource Include="Reports\rptPuertoDestino.rdlc" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,7 +87,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Reports\rptPais.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
