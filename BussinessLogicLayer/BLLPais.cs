@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLayer
 {
-    public class Class1
+    public class BLLPais
     {
     }
 }

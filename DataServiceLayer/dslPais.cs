@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataServiceLayer
 {
-    public class dslPais
+    public class DSLPais
     {
         private int _idPais;
         private string _nombrePais;

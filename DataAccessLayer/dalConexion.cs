@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class dalConexion
+    public class DALConexion
     {
         private string servidor;
         private string usuario;
@@ -22,7 +22,7 @@ namespace DataAccessLayer
         private SqlConnection sqlConexion = new SqlConnection();
 
 
-        public dalConexion()
+        public DALConexion()
         {
             this.servidor = "localhost";
             this.usuario = "sa";
@@ -30,7 +30,7 @@ namespace DataAccessLayer
             this.baseDatos = "CLUB_NAUTICO";
         }
 
-        public dalConexion(string servidor, string usuario, string clave, string baseDatos)
+        public DALConexion(string servidor, string usuario, string clave, string baseDatos)
         {
             this.servidor = servidor;
             this.usuario = usuario;
