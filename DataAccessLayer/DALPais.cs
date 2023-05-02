@@ -10,9 +10,9 @@ using DataServiceLayer;
 
 namespace DataAccessLayer
 {
-    public class DALPais
+    public class dalPais
     {
-        private DALConexion conexion;
+        private dalConexion conexion;
         private List<SqlParameter> parameters;
         private const string SP_INSERTAR_PAIS = "spInsertarPais";
         private const string SP_EDITAR_PAIS = "spEditarPais";
@@ -35,7 +35,7 @@ namespace DataAccessLayer
 
         public int insertarPais(dslPais pais)
         {
-            conexion = new DALConexion();
+            conexion = new dalConexion();
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@NOMBRE_PAIS", pais.NombrePais));
             return conexion.insertarRegistro(SP_INSERTAR_PAIS, parameters);
@@ -43,7 +43,7 @@ namespace DataAccessLayer
         }
         public int editarPais(dslPais pais) 
         {
-            conexion = new DALConexion();
+            conexion = new dalConexion();
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@nomPais", pais.NombrePais));
             parameters.Add(new SqlParameter("@idpais", pais.IdPais));
@@ -52,7 +52,7 @@ namespace DataAccessLayer
 
         public bool existePais(dslPais pais) 
         {
-            conexion = new DALConexion();
+            conexion = new dalConexion();
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@NOMPAIS", pais.NombrePais.ToUpper()));
             return ConvertDataTableToBoolean(conexion.obtenerDatos(SP_EXISTE_PAIS, parameters));
@@ -60,7 +60,7 @@ namespace DataAccessLayer
 
         public bool paisTieneCiudad(dslPais pais)
         {
-            conexion = new DALConexion();
+            conexion = new dalConexion();
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@idpais", pais.IdPais));
             return ConvertDataTableToBoolean(conexion.obtenerDatos(SP_PAIS_TIENE_CIUDAD, parameters));
@@ -68,12 +68,12 @@ namespace DataAccessLayer
 
         public DataTable listarPaises()
         {
-            return new DALConexion().obtenerDatos(SP_LISTAR_PAISES);
+            return new dalConexion().obtenerDatos(SP_LISTAR_PAISES);
         }
 
         public DataTable busquedaPaisNombre(dslPais pais)
         {
-            conexion = new DALConexion();
+            conexion = new dalConexion();
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@nomPais", pais.NombrePais.ToUpper()));
             return conexion.obtenerDatos(SP_BUSCAR_PAIS_NOMBRE, parameters);
@@ -81,7 +81,7 @@ namespace DataAccessLayer
 
         public int eliminarPais(dslPais pais)
         {
-            conexion = new DALConexion();
+            conexion = new dalConexion();
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@idpais", pais.IdPais));
             return conexion.insertarRegistro(SP_ELIMINAR_PAIS, parameters);
