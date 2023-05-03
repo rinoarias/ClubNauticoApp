@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,11 +58,19 @@ namespace PresentationLayer
         private void Button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            //string nombreFormulario = "frm" + button.Text;
-            //Type tipoFormulario = Type.GetType(nombreFormulario);
-            //Form formulario = (Form)Activator.CreateInstance(tipoFormulario);
-            Form formulario = new frmBase();
-            formulario.ShowDialog();
+            if(button.Text == "Pais")
+            {
+                string nombreFormulario = "frm" + button.Text;
+                //Type tipoFormulario = Type.GetType(nombreFormulario);
+                //Form formulario = (Form)Activator.CreateInstance(tipoFormulario);
+                Form formulario = new frmPais();
+                formulario.ShowDialog();
+            }
+            else
+            {
+                Form formulario = new frmCRUD();
+                formulario.ShowDialog();
+            }
         }
 
     }
